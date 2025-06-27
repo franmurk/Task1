@@ -1,0 +1,52 @@
+<div class="image-text-section">
+  <div class="image-text-section__image">
+    <img src="{{ section.settings.image | image_url }}" alt="section image">
+  </div>
+  <div class="image-text-section__content">
+    <div class="image-text-section__title">
+      {{ section.settings.title }}
+    </div>
+    <div class="image-text-section__description">
+      {{ section.settings.description }}
+    </div>
+    <button class="image-text-section__button">
+      {{ section.settings.button_text }}
+    </button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with Text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Handcrafted and responsibly sourced"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "On the other hand, we denounce with righteous indignation..."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn more"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default"
+    }
+  ]
+}
+{% endschema %}
